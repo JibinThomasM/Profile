@@ -1,202 +1,790 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jibin Thomas</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Jibin Thomas - Senior .NET Full Stack Developer with 5+ years of experience. Specializing in C#, ASP.NET Core, React, and scalable enterprise solutions." />
+    <meta name="keywords"
+        content="Jibin Thomas, .NET Developer, Full Stack Developer, Software Engineer, C#, ASP.NET, React, Kerala" />
+    <meta name="author" content="Jibin Thomas" />
+    <title>Jibin Thomas | Full Stack .NET Developer</title>
 
-    <!----Font Awesome cdn-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
 
-    <!--Main Css-->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <!-----Header Design----->
-    <header class="header">
-        <a href="#" class="logo">Portfolio</a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
+
+    <!-- ===================== CURSOR ===================== -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- ===================== PRELOADER ===================== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">&lt;JT /&gt;</div>
+            <div class="preloader-bar">
+                <div class="preloader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="header" id="header">
+        <a href="#home" class="logo" aria-label="Jibin Thomas Logo">
+            <span class="logo-bracket">&lt;</span>JT<span class="logo-bracket">/&gt;</span>
+        </a>
+        <nav class="navbar" id="navbar" aria-label="Main navigation">
+            <a href="#home" class="nav-link active" data-section="home">Home</a>
+            <a href="#about" class="nav-link" data-section="about">About</a>
+            <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+            <a href="#services" class="nav-link" data-section="services">Services</a>
+            <a href="#portfolio" class="nav-link" data-section="portfolio">Projects</a>
+            <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
         </nav>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </header>
 
-    <!--Home section-->
+    <!-- ===================== HOME SECTION ===================== -->
     <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hi, Myself</h3>
-            <h1>Jibin Thomas</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>Results-driven software engineer with over 2 years of hands-on experience in .NET full stack development. Proficient in crafting robust and scalable solutions, I am dedicated to leveraging my technical expertise to contribute effectively to innovative projects. Seeking opportunities to apply my skills in a dynamic environment where I can continue to learn, grow, and make a meaningful impact.</p>
-            <div class="social-media">
-                <a href="mailto:Jibinthomas799@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/jibin-thomas-m/"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/JibinThomasM"><i class="fa-brands fa-github"></i></a>
-                <a href="tel:+918281751954"><i class="fa-solid fa-phone"></i></a>
+        <!-- Animated particles background -->
+        <div class="particles-bg" id="particlesBg"></div>
+
+        <!-- Grid lines overlay -->
+        <div class="grid-overlay"></div>
+
+        <div class="home-container">
+            <div class="home-content" data-reveal="left">
+                <div class="home-badge">
+                    <span class="badge-dot"></span>
+                    Available for opportunities
+                </div>
+                <h1 class="home-title">
+                    Hi, I'm <br />
+                    <span class="name-highlight">Jibin Thomas</span>
+                </h1>
+                <h2 class="home-subtitle">
+                    And I'm a <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+                </h2>
+                <p class="home-desc">
+                    Results-driven software engineer with <strong>5+ years</strong> of hands-on experience in
+                    <strong>.NET full stack development</strong>. Dedicated to crafting robust, scalable solutions and
+                    leveraging technical expertise to build meaningful, high-impact products.
+                </p>
+                <div class="home-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i> Hire Me
+                    </a>
+                    <a href="src/JibinThomas_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="mailto:Jibinthomas799@gmail.com" aria-label="Email" class="social-link"
+                        data-tooltip="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jibin-thomas-m/" target="_blank" rel="noopener"
+                        aria-label="LinkedIn" class="social-link" data-tooltip="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/JibinThomasM" target="_blank" rel="noopener" aria-label="GitHub"
+                        class="social-link" data-tooltip="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="tel:+918281751954" aria-label="Phone" class="social-link" data-tooltip="Call">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
             </div>
-            <a href="src/JibinThomas_Resume.pdf" download class="btn">Download Resume</a>
+
+            <div class="home-visual" data-reveal="right">
+                <div class="hero-image-wrapper">
+                    <div class="hero-glow"></div>
+                    <div class="hero-ring ring-1"></div>
+                    <div class="hero-ring ring-2"></div>
+                    <div class="hero-image-container">
+                        <img src="src/hero_profile.jpg" alt="Jibin Thomas - Full Stack .NET Developer"
+                            class="hero-image" />
+                    </div>
+                    <!-- Floating tech badges -->
+                    <div class="tech-badge badge-dotnet" data-reveal="up">
+                        <i class="fa-brands fa-microsoft"></i>.NET
+                    </div>
+                    <div class="tech-badge badge-react" data-reveal="up">
+                        <i class="fa-brands fa-react"></i>React
+                    </div>
+                    <div class="tech-badge badge-cs" data-reveal="up">
+                        <span class="cs-icon">C#</span>
+                    </div>
+                    <div class="tech-badge badge-angular" data-reveal="up">
+                        <i class="fa-brands fa-angular"></i>Angular
+                    </div>
+                    <div class="tech-badge badge-ai" data-reveal="up">
+                        <i class="fa-solid fa-robot"></i>AI
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="home-img">
-            <img src="src/ProfileImage1.png" alt="" />
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
         </div>
     </section>
 
-    <!--About Section-->
+    <!-- ===================== ABOUT SECTION ===================== -->
     <section class="about" id="about">
-        <div class="about-img">
-            <img src="src/ProfileImage2.png" alt="" />
-        </div>
+        <div class="section-container">
+            <div class="about-visual" data-reveal="left">
+                <div class="about-image-wrapper">
+                    <div class="about-image-bg"></div>
+                    <img src="src/DP1.jpeg" alt="Jibin Thomas" class="about-image" />
+                    <div class="about-exp-badge">
+                        <span class="exp-num">5+</span>
+                        <span class="exp-label">Years<br />Experience</span>
+                    </div>
+                </div>
+            </div>
 
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Full stack Developer</h3>
-            <p>I am a skilled and passionate .NET Developer with 2+ years of experience in designing, developing, and maintaining high-performance software applications. With a strong foundation in object-oriented programming and a deep understanding of the .NET framework, I thrive in creating innovative solutions that address complex business challenges. My expertise extends to various domains, including E-commerce and Logistics. I am always eager to stay updated with the latest technologies and methodologies, allowing me to deliver cutting-edge software solutions.<br />
-                <span class="hideReadMore" id="readMore">
-                    <br />🔹 Technical Skills :<br />
-                    ✓ Programming Languages : C#, Java, C<br />
-                    ✓ Frameworks : .NET Core, .NET Framework, ASP.NET MVC<br />
-                    ✓ Web Technologies : HTML, CSS, JavaScript, jQuery, ReactJs<br />
-                    ✓ Databases : SQL Server, MSSQL<br />
-                    ✓ Tools : Visual Studio, Git, Azure DevOps<br />
-                </span>
-            </p>
-            <a onclick="toggleReadMore()" class="btn" id="btnReadMe">Read more</a>
+            <div class="about-content" data-reveal="right">
+                <div class="section-tag">About Me</div>
+                <h2 class="section-title">Passionate <span>Full Stack</span> Developer</h2>
+                <p class="about-text">
+                    I'm a skilled and passionate <strong>.NET Developer</strong> with 5+ years of experience in
+                    designing, developing, and maintaining high-performance software applications. With a strong
+                    foundation in object-oriented programming and deep knowledge of the .NET framework, I thrive in
+                    creating innovative solutions for complex business challenges.
+                </p>
+                <p class="about-text">
+                    My expertise extends across domains including <strong>E-commerce</strong> and
+                    <strong>Logistics</strong>. I'm always eager to stay updated with the latest technologies and
+                    methodologies, delivering cutting-edge software solutions.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-num" data-count="5">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Years Exp.</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" data-count="20">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" data-count="10">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
+                <a href="src/JibinThomas_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fa-solid fa-file-pdf"></i> Download Resume
+                </a>
+            </div>
         </div>
     </section>
 
-    <!--Service Section-->
+    <!-- ===================== SKILLS SECTION ===================== -->
+    <section class="skills" id="skills">
+        <div class="section-container skills-container">
+            <div class="section-header" data-reveal="up">
+                <div class="section-tag">What I Know</div>
+                <h2 class="section-title">My <span>Skills</span></h2>
+                <p class="section-subtitle">Technologies I work with on a daily basis</p>
+            </div>
+
+            <div class="skills-grid" data-reveal="up">
+                <div class="skill-category">
+                    <h3 class="skill-cat-title"><i class="fa-solid fa-code"></i> Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>C#</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML / CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-cat-title"><i class="fa-solid fa-layer-group"></i> Frameworks</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>.NET Core</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>ASP.NET MVC</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>ReactJS</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Angular</span>
+                                <span>72%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="72"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Entity Framework</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-cat-title"><i class="fa-solid fa-database"></i> Databases & Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SQL Server / MSSQL</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Azure DevOps</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="78"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Git</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Visual Studio</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="92"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-cat-title"><i class="fa-solid fa-robot"></i> AI & Emerging Tech</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>AI Agents</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>LLM Integration</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="65"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Prompt Engineering</span>
+                                <span>68%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="68"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech chips -->
+            <div class="tech-chips" data-reveal="up">
+                <span class="chip">C#</span>
+                <span class="chip">ASP.NET Core</span>
+                <span class="chip">ASP.NET MVC</span>
+                <span class="chip">Entity Framework</span>
+                <span class="chip">SQL Server</span>
+                <span class="chip">ReactJS</span>
+                <span class="chip">Angular</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">jQuery</span>
+                <span class="chip">Bootstrap</span>
+                <span class="chip">HTML5 / CSS3</span>
+                <span class="chip">Azure DevOps</span>
+                <span class="chip">Git</span>
+                <span class="chip">Visual Studio</span>
+                <span class="chip">ADO.NET</span>
+                <span class="chip">AI Agents</span>
+                <span class="chip">LLM Integration</span>
+                <span class="chip">Prompt Engineering</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SERVICES SECTION ===================== -->
     <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
-        <div class="services-container">
-            <div class="services-box">
-                <i class="fa-solid fa-code"></i>
-                <h3>Web Development</h3>
-                <p>Transform your ideas into stunning, functional websites with our comprehensive web development services. From conceptualization to deployment, we specialize in crafting tailored solutions that elevate your online presence. <span class="hideReadMore" id="webDevelopment">With expertise in front-end and back-end technologies, we deliver user-friendly, responsive websites that drive engagement and success for your business.</span></p>
-                <a onclick="toggleReadMoreWeb()" class="btn" id="btnWebDevelopment">Read More</a>
+        <div class="section-container">
+            <div class="section-header" data-reveal="up">
+                <div class="section-tag">What I Offer</div>
+                <h2 class="section-title">My <span>Services</span></h2>
+                <p class="section-subtitle">Delivering end-to-end digital solutions tailored to your needs</p>
             </div>
 
-            <div class="services-box">
-                <i class="fa-regular fa-window-restore"></i>
-                <h3>Software Development</h3>
-                <p>Empower your digital presence with my comprehensive software development solutions. Whether you're seeking to streamline operations, enhance productivity, or innovate your offerings, I am here to bring your vision to life. <span class="hideReadMore" id="softWareDevelopment">Leveraging the latest technologies and agile methodologies, I deliver bespoke software solutions that drive efficiency, foster growth, and exceed your expectations.</span></p>
-                <a onclick="toggleReadMoreSw()" class="btn" id="btnSoftwareDevelopment">Read More</a>
-            </div>
+            <div class="services-grid">
+                <div class="service-card" data-reveal="up" data-delay="0">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="service-number">01</div>
+                    <h3>Web Development</h3>
+                    <p>Transform your ideas into stunning, functional websites. From conceptualization to deployment, I
+                        craft tailored solutions with responsive, user-friendly designs using modern front-end and
+                        back-end technologies that drive engagement and business success.</p>
+                    <div class="service-tags">
+                        <span>HTML/CSS</span><span>JavaScript</span><span>ASP.NET</span>
+                    </div>
+                </div>
 
-            <div class="services-box">
-                <i class="fa-brands fa-android"></i>
-                <h3>App Development</h3>
-                <p>Elevate your digital footprint with our bespoke app development solutions. Whether you're launching a new mobile application or enhancing an existing one, I specialize in creating intuitive, user-friendly experiences that captivate audiences. <span class="hideReadMore" id="appDevelopment">From conceptualization to deployment, I leverage cutting-edge technologies to craft innovative apps that drive engagement, foster brand loyalty, and propel your business forward in the mobile landscape.</span></p>
-                <a onclick="toggleReadMoreApp()" class="btn" id="btnAppDevelopment">Read More</a>
+                <div class="service-card service-card-featured" data-reveal="up" data-delay="150">
+                    <div class="service-icon">
+                        <i class="fa-regular fa-window-restore"></i>
+                    </div>
+                    <div class="service-number">02</div>
+                    <h3>Software Development</h3>
+                    <p>Empower your business with comprehensive software solutions. Whether streamlining operations,
+                        enhancing productivity, or innovating offerings — I deliver bespoke software using agile
+                        methodologies that drive efficiency and exceed expectations.</p>
+                    <div class="service-tags">
+                        <span>C#</span><span>.NET Core</span><span>MVC</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-reveal="up" data-delay="300">
+                    <div class="service-icon">
+                        <i class="fa-brands fa-android"></i>
+                    </div>
+                    <div class="service-number">03</div>
+                    <h3>App Development</h3>
+                    <p>Elevate your digital footprint with bespoke app development. I create intuitive, user-friendly
+                        experiences using cutting-edge technologies that drive engagement, foster brand loyalty, and
+                        propel your business forward in the mobile landscape.</p>
+                    <div class="service-tags">
+                        <span>React</span><span>Mobile</span><span>API</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!--Portfolio Section-->
+    <!-- ===================== PROJECTS SECTION ===================== -->
     <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Projects</span></h2>
-
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="src/E-Library-image.jpg" alt="" />
-                <div class="portfolio-layer">
-                    <h2>E-Library Management System</h2>
-                    <p>
-                        This is a web-based library management system where users
-                        can browse and borrow books, with due dates displayed.
-                        Admins have the ability to add and manage books and users,
-                        enhancing administrative control. Developed with Asp.net, SQL,
-                        JavaScript, ADO.net, Entity Framework, jQuery, and Bootstrap, it
-                        offers a comprehensive platform for efficient library
-                        management.
-                    </p>
-                    <a href="https://bsite.net/ELibraryManagement/Homepage.aspx"><i class="fa-solid fa-up-right-from-square"></i></a>
-                </div>
+        <div class="section-container">
+            <div class="section-header" data-reveal="up">
+                <div class="section-tag">My Work</div>
+                <h2 class="section-title">Latest <span>Projects</span></h2>
+                <p class="section-subtitle">A showcase of my recent work and technical achievements</p>
             </div>
 
-            <div class="portfolio-box">
-                <img src="src/weatherAppImage.png" alt="" />
-                <div class="portfolio-layer">
-                    <h2>Weateher Application</h2>
-                    <p>
-                        This is a front-end only application. Which provides the current weather of major cities in the world. A third-party
-                        API(open weather) is used to get the weather data. And basic HTML, CSS, JavaScript were used in frontend.
-                    </p>
-                    <a href="https://jibinthomasm.github.io/WeatherApp/"><i class="fa-solid fa-up-right-from-square"></i></a>
+            <div class="portfolio-grid">
+                <div class="portfolio-card" data-reveal="up" data-delay="0">
+                    <div class="portfolio-image">
+                        <img src="src/E-Library-image.jpg" alt="E-Library Management System" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://bsite.net/ELibraryManagement/Homepage.aspx" target="_blank"
+                                    rel="noopener" class="portfolio-link" aria-label="View live site">
+                                    <i class="fa-solid fa-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Web App</span>
+                        <h3>E-Library Management System</h3>
+                        <p>A web-based library management system where users can browse and borrow books, with due dates
+                            displayed. Admins can add and manage books and users.</p>
+                        <div class="portfolio-tech">
+                            <span>ASP.NET</span>
+                            <span>SQL</span>
+                            <span>Entity Framework</span>
+                            <span>jQuery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-reveal="up" data-delay="150">
+                    <div class="portfolio-image">
+                        <img src="src/weatherAppImage.png" alt="Weather Application" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://jibinthomasm.github.io/WeatherApp/" target="_blank" rel="noopener"
+                                    class="portfolio-link" aria-label="View live site">
+                                    <i class="fa-solid fa-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Frontend</span>
+                        <h3>Weather Application</h3>
+                        <p>A front-end application providing current weather data for major cities worldwide, powered by
+                            the OpenWeather API with a clean and intuitive interface.</p>
+                        <div class="portfolio-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-reveal="up" data-delay="300">
+                    <div class="portfolio-image">
+                        <img src="src/Netflix.png" alt="Netflix Clone" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://jibinthomasm.github.io/Netflix/" target="_blank" rel="noopener"
+                                    class="portfolio-link" aria-label="View live site">
+                                    <i class="fa-solid fa-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">React</span>
+                        <h3>Netflix Clone</h3>
+                        <p>A Netflix clone built with ReactJS. Uses TMDB API for real movie data and the react-youtube
+                            library to play trailers — showcasing modern front-end development skills.</p>
+                        <div class="portfolio-tech">
+                            <span>ReactJS</span>
+                            <span>TMDB API</span>
+                            <span>CSS</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="portfolio-box">
-                <img src="src/Netflix.png" alt="" />
-                <div class="portfolio-layer">
-                    <h2>Netflix Clone</h2>
-                    <p>This application(a Netflix clone) created using ReactJs. Css gives it a good-looking. A third-party api(TMDB) is used for getting movie data. React-youtube library is used to play trailers of the movies.</p>
-                    <a href="https://jibinthomasm.github.io/Netflix/"><i class="fa-solid fa-up-right-from-square"></i></a>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!--Contact Section-->
+    <!-- ===================== EXPERIENCE SECTION ===================== -->
+    <section class="experience" id="experience">
+        <div class="section-container">
+            <div class="section-header" data-reveal="up">
+                <div class="section-tag">My Journey</div>
+                <h2 class="section-title">Work <span>Experience</span></h2>
+                <p class="section-subtitle">My professional growth and the companies I've shaped</p>
+            </div>
+
+            <div class="timeline" data-reveal="up">
+
+                <!-- Entry 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Senior Software Engineer</h3>
+                                <span class="timeline-company"><i class="fa-solid fa-building"></i> H&amp;R Block India
+                                    &middot; Trivandrum, Kerala · Hybrid</span>
+                            </div>
+                            <span class="timeline-period">Aug 2026 – Present · 3 mos</span>
+                        </div>
+                        <p>Promoted to Senior Software Engineer, leading critical modules within the enterprise-grade
+                            tax software platform. Responsible for architecting scalable solutions, conducting code
+                            reviews, and mentoring junior developers. Driving technical excellence across the team in a
+                            hybrid work environment.</p>
+                        <div class="timeline-tech">
+                            <span>C#</span><span>ASP.NET Web API</span><span>SQL Server</span><span>Azure
+                                DevOps</span><span>Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 2: H&R Block India - Software Engineer -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Engineer</h3>
+                                <span class="timeline-company"><i class="fa-solid fa-building"></i> H&amp;R Block India
+                                    &middot; Trivandrum, Kerala · Hybrid</span>
+                            </div>
+                            <span class="timeline-period">Jul 2024 – Aug 2026 · 2 yrs 2 mos</span>
+                        </div>
+                        <p>Developed and maintained high-performance software solutions for the H&amp;R Block tax
+                            services platform. Built robust ASP.NET Web API backends and contributed to full-stack
+                            feature delivery. Collaborated within agile teams to ship reliable, production-ready
+                            software at scale.</p>
+                        <div class="timeline-tech">
+                            <span>C#</span><span>ASP.NET Web API</span><span>SQL
+                                Server</span><span>JavaScript</span><span>Azure DevOps</span><span>Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 3: DCS Infoway -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Programmer</h3>
+                                <span class="timeline-company"><i class="fa-solid fa-building"></i> DCS Infoway &middot;
+                                    Kollam, Kerala · On-site</span>
+                            </div>
+                            <span class="timeline-period">Oct 2023 – Jul 2024 · 10 mos</span>
+                        </div>
+                        <p>Developed desktop and data-driven applications using WinForms and ADO.NET. Built efficient
+                            data access layers, designed database schemas, and delivered reliable software solutions for
+                            clients. Worked closely with cross-functional teams in an on-site environment to meet
+                            project deadlines.</p>
+                        <div class="timeline-tech">
+                            <span>WinForms</span><span>ADO.NET</span><span>C#</span><span>.NET Framework</span><span>SQL
+                                Server</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 4: Caftius Technologies -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Engineer</h3>
+                                <span class="timeline-company"><i class="fa-solid fa-building"></i> Caftius Technologies
+                                    Pvt. Ltd. &middot; Chennai, Tamil Nadu</span>
+                            </div>
+                            <span class="timeline-period">Mar 2022 – Sep 2023 · 1 yr 7 mos</span>
+                        </div>
+                        <p>Built and maintained full-stack web applications using .NET Framework and ASP.NET MVC for
+                            diverse clients. Implemented RESTful APIs, optimised SQL queries, and developed responsive
+                            front-end interfaces. Gained deep expertise across the complete .NET ecosystem while
+                            delivering projects on time.</p>
+                        <div class="timeline-tech">
+                            <span>.NET Framework</span><span>ASP.NET MVC</span><span>C#</span><span>SQL
+                                Server</span><span>JavaScript</span><span>jQuery</span><span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="timeline-note"><i class="fa-solid fa-circle-info"></i> Connect on <a
+                    href="https://www.linkedin.com/in/jibin-thomas-m/" target="_blank" rel="noopener">LinkedIn</a> for
+                full details.</p>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT SECTION ===================== -->
     <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
-
-        <form action="https://formsubmit.co/4c6dec305077f713aff69b70e3b8898b" method="post">
-            <div class="input-box">
-                <input type="text" name="Name" required placeholder="Full Name" />
-                <input type="email" name="email" required placeholder="Email Address" />
+        <div class="section-container">
+            <div class="section-header" data-reveal="up">
+                <div class="section-tag">Get In Touch</div>
+                <h2 class="section-title">Contact <span>Me</span></h2>
+                <p class="section-subtitle">Have a project in mind or just want to say hi? I'd love to hear from you.
+                </p>
             </div>
 
-            <div class="input-box">
-                <input type="tel" name="Mobile Number" required placeholder="Mobile Number" />
-                <input type="text" name="Subject" required placeholder="Email Subject" />
+            <div class="contact-wrapper">
+                <div class="contact-info" data-reveal="left">
+                    <h3>Let's work together!</h3>
+                    <p>I'm currently open to freelance projects, full-time roles, and exciting collaborations. Feel free
+                        to reach out.</p>
+
+                    <div class="contact-details">
+                        <a href="mailto:Jibinthomas799@gmail.com" class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <span class="contact-detail-label">Email</span>
+                                <span class="contact-detail-value">Jibinthomas799@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+918281751954" class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <span class="contact-detail-label">Phone</span>
+                                <span class="contact-detail-value">+91 82817 51954</span>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jibin-thomas-m/" target="_blank" rel="noopener"
+                            class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div>
+                                <span class="contact-detail-label">LinkedIn</span>
+                                <span class="contact-detail-value">jibin-thomas-m</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/JibinThomasM" target="_blank" rel="noopener"
+                            class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-brands fa-github"></i></div>
+                            <div>
+                                <span class="contact-detail-label">GitHub</span>
+                                <span class="contact-detail-value">JibinThomasM</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-reveal="right">
+                    <form class="contact-form" id="contactForm"
+                        action="https://formsubmit.co/4c6dec305077f713aff69b70e3b8898b" method="post">
+                        <input type="hidden" name="_autoresponse"
+                            value="Hi there, Thank you for connecting with me through my portfolio website! Your message has been received loud and clear. As a software engineer passionate about innovation and collaboration, I appreciate your interest and look forward to delving into your thoughts. Rest assured, I will be personally reviewing your message and will get back to you as soon as possible. Best regards, Jibin Thomas" />
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full Name</label>
+                                <input type="text" id="contactName" name="Name" required placeholder="John Doe" />
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address</label>
+                                <input type="email" id="contactEmail" name="email" required
+                                    placeholder="john@example.com" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactPhone">Mobile Number</label>
+                                <input type="tel" id="contactPhone" name="Mobile Number" required
+                                    placeholder="+91 00000 00000" />
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject">Subject</label>
+                                <input type="text" id="contactSubject" name="Subject" required
+                                    placeholder="Project Inquiry" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="Message" required rows="5"
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                            <span class="btn-loader" id="btnLoader"></span>
+                        </button>
+                    </form>
+                </div>
             </div>
-
-            <textarea name="Message" id="" cols="30" required rows="10" placeholder="Your Message"></textarea>
-            <!--<input type="hidden" name="_captcha" value="true">-->
-            <input type="hidden" name="_autoresponse" value="Hi there,
-
-Thank you for connecting with me through my portfolio website! Your message has been received loud and clear. As a software engineer passionate about innovation and collaboration, I appreciate your interest and look forward to delving into your thoughts.
-
-Rest assured, I'll be personally reviewing your message and will get back to you as soon as possible. In the meantime, feel free to explore more about my work and projects on my website.
-
-Once again, thank you for taking the time to reach out. Your input is valuable and greatly appreciated.
-
-Best regards,
-
-Jibin Thomas">
-            <!--<input type="hidden" name="_next" value="#home">-->
-            <input type="submit" value="Send Message" class="btn" />
-        </form>
+        </div>
     </section>
 
-    <!--Footer Section-->
+    <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
-        <div class="footer-text">
-            <p>
-                Copyright &copy; 2024
-                <script>new Date().getFullYear() > 2024 && document.write("-" + new Date().getFullYear());</script>, by Jibin Thomas | All Rights Reserved.
-            </p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-bracket">&lt;</span>JT<span class="logo-bracket">/&gt;</span>
+                </a>
+                <p>Full Stack .NET Developer crafting premium digital experiences.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#portfolio">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="mailto:Jibinthomas799@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/jibin-thomas-m/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/JibinThomasM" target="_blank" rel="noopener" aria-label="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
         </div>
-
-        <div class="footer-iconTop">
-            <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
+        <div class="footer-bottom">
+            <p>
+                &copy; 2024
+                <script>new Date().getFullYear() > 2024 && document.write("–" + new Date().getFullYear());</script>
+                Jibin Thomas. All Rights Reserved. Crafted with <i class="fa-solid fa-heart" style="color:#e74c3c;"></i>
+            </p>
+            <a href="#home" class="back-to-top" aria-label="Back to top">
+                <i class="fa-solid fa-angle-up"></i>
+            </a>
         </div>
     </footer>
 
-    <!--Scroll Reveal JS-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!--Typed JS-->
+    <!-- Typed.js -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-    <!--Main Js-->
+    <!-- Main JS -->
     <script src="main.js"></script>
 </body>
+
 </html>
